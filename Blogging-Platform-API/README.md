@@ -24,7 +24,7 @@ The Controller layer handles the incoming HTTP requests and manages the routing 
 - Comment creation and retrieval
 ## Endpoints
 ### User Endpoints:
-![User_Controller](https://github.com/mukeshlomror/Blogging-Platform-API/assets/54076057/1ab0820d-fea6-4022-a98b-5cf26ab1bbd2)
+![User_Controller](https://github.com/mukeshlomror/Blogging-Platform-API/assets/54076057/d2729723-b354-4ff3-a213-1f5e1da0b528)
 
 ```
 - **POST /api/users/create -** Create a new user.
@@ -37,7 +37,7 @@ The Controller layer handles the incoming HTTP requests and manages the routing 
 ```
 
 ### Post Endpoints:
-![Post_Controller](https://github.com/mukeshlomror/Blogging-Platform-API/assets/54076057/33a6f11f-6312-4966-91be-c5c956c650f3)
+![Post_Controller](https://github.com/mukeshlomror/Blogging-Platform-API/assets/54076057/86525bc0-7960-4d34-bc24-a659e44a3e40)
 
 ```
 - **POST /api/posts/create -** Create a new post.
@@ -52,7 +52,7 @@ The Controller layer handles the incoming HTTP requests and manages the routing 
 ```
 
 ### Category Endpoints:
-![Category_Controller](https://github.com/mukeshlomror/Blogging-Platform-API/assets/54076057/67d9c303-f753-45a9-bb9e-dc41e1517bf0)
+![Category_Controller](https://github.com/mukeshlomror/Blogging-Platform-API/assets/54076057/8a0af753-f31d-4424-bd31-b8077639c1bb)
 
 ```
 - **POST /api/categories/create -** Create an Category.
@@ -63,7 +63,7 @@ The Controller layer handles the incoming HTTP requests and manages the routing 
 ```
 
 ### Comment Endpoints:
-![Comment_Controller](https://github.com/mukeshlomror/Blogging-Platform-API/assets/54076057/604f2195-0088-4520-bfb4-4fcd6a4594f6)
+![Comment_Controller](https://github.com/mukeshlomror/Blogging-Platform-API/assets/54076057/9f96e841-4694-4ceb-973f-f57304b61f76)
 
 ```
 - **POST /api/comments/create/post/{postId} -** Add a comment to a post.
@@ -89,9 +89,19 @@ The Repository layer is responsible for interacting with the underlying database
 ```
 
 ## Database Design and Schemas:
-![Blog_Schemas](https://github.com/mukeshlomror/Blogging-Platform-API/assets/54076057/b483e9ff-217c-4c10-94a8-bdded9d4db03)
+![Blog_Schemas](https://github.com/mukeshlomror/Blogging-Platform-API/assets/54076057/ec90737c-6564-49bb-a124-f18d6450a01e)
 
 The database design for the Blogging Platform API follows the object-relational mapping (ORM) approach provided by Spring Data JPA. The entities (such as User, Post, Follow, Comment) are mapped to database tables, and the relationships between them are defined using annotations. The data is persisted in a relational database, such as MySQL.
+
+## Entity Mapping
+
+In This Project We have Entities such as `User`, `Post`, `Comment` and `Category`.
+These Entities have following relationship between them
+- A `User` can create multiple Posts So
+    * `User` has `@OneToMany` relationship with `Post`
+- A `Post` can have multiple Comments So
+     * `Post` has `@OneToMany` relationship with `Comment`
+
 
 ## Data Structures Used
 ```
@@ -104,5 +114,6 @@ The database design for the Blogging Platform API follows the object-relational 
 The Blogger Web Application is a full-stack web application that allows users to create, read, update, and delete blog posts and comments. It also allows users to follow other users and view their blog posts. The application uses Spring Boot, Spring MVC, and Spring Data JPA to implement the backend, and MySQL for the database. Swagger is used for API documentation.
 
 ## Deployment
-# The application has been deployed on an AWS EC2 instance, and can be accessed using the following URL :+: [Deployment-Link](http://13.127.8.252:8080/swagger-ui/index.html)
+ The application has been deployed on an AWS EC2 instance, and can be accessed using the following 
+ # URL :+: [Deployment-Link](http://52.66.243.188:8080/swagger-ui/index.html?continue#/)
 
